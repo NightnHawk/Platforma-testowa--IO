@@ -1,5 +1,6 @@
 <?php
 include 'includes/autoloader.inc.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pl" dir="ltr">
@@ -9,5 +10,10 @@ include 'includes/autoloader.inc.php';
 </head>
 <body>
 <a href='includes/Login.inc.php'>Logowanie</a>
+	<?php
+		$testObj = new DbTest();
+		$testObj->getUsers();
+	?>
+
 </body>
 </html>
