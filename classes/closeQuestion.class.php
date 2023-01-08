@@ -27,7 +27,8 @@ class closeQuestion{
 		$this->answerCount++;
 	}
 	public function rmAnswer(int $_nr){
-		$this->answers = array_splice($this->answers, $_nr, $_nr);
+		array_push($this->answers, $_nr);
+		array_pop($this->answers);
 	}
 	
 	
