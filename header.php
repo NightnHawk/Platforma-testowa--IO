@@ -1,7 +1,6 @@
 <?php
     session_start();
 	include_once "includes\autoloader.inc.php";
-    include_once "header.php";
 ?>
 <!DOCTYPE html>
 <html lang="pl">
