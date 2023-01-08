@@ -1,0 +1,78 @@
+body{
+    background-color: #1e1e1e;
+}
+
+a{
+    cursor: pointer;
+}
+
+.header-main{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-main-logo{
+    width: fit-content;
+    height: 100%;
+    /*background-color: yellow;*/
+    padding-left: 60px;
+    display: flex;
+}
+
+.header-main-logo img{
+    height: 45px;
+    align-self: center;
+}
+
+.header-main-nav{
+    width: fit-content;
+    height: 100%;
+    /*background-color: orange;*/
+}
+
+.header-main-nav ul{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.header-main-nav ul li{
+    display: inline;
+    float: left;
+}
+
+.header-main-nav ul li a{
+    padding: 0 10px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 60px;
+}
+
+.header-main-acount{
+    width: fit-content;
+    height: 100%;
+    /*background-color: red;*/
+    padding-right: 60px;
+}
+
+.header-main-acount-nav{
+    width: fit-content;
+    height: 100%;
+    /*background-color: orangered;*/
+}
+
+.header-main-acount-nav ul{
+    list-style: none;
+    margin-right: 30px;
+}
+
+.header-main-acount-nav ul li{
+    display: inline;
+    float: left;
+}
+.header-main-acount-nav ul li a{
+    padding: 0 10px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 60px;
+}
