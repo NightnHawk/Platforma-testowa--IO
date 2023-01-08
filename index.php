@@ -8,14 +8,6 @@ include 'includes/autoloader.inc.php';
 	<title>Strona testowa</title>
 </head>
 <body>
-
-<?php
-
-$object = new User();
-$object->setLogin('Daniel');
-echo $object->getLogin();
-
-?>
-
+<a href='includes/Login.inc.php'>Logowanie</a>
 </body>
 </html>
