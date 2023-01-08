@@ -1,5 +1,5 @@
 <?php
-	include_once "includes/autologer.inc.php";
+	include_once "includes\autoloader.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="pl">
