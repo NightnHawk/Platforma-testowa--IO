@@ -5,7 +5,7 @@ class DbTest extends Database{
 		$sql = "SELECT *FROM users";
 		$stmt = $this->connect()->query($sql);
 		while($row = $stmt->fetch()){
-			echo $row['user_firstname'].'<br>';
+			echo '<span style="color:white">'. $row['user_firstname'].'</span><br>';
 		}
 	}
 
