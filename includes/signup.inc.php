@@ -5,15 +5,17 @@ if(isset($_POST["submit"]))
     //Grabbing the data
     $uid=$_POST["uid"];
     $password=$_POST["password"];
+    $passwordRepeat=$_POST["password-repeat"];
+    $email=$_POST["email"];
 
     //Instantiate SignupContr class
     include "..\classes\dbh.class.php";
-    include "..\classes\login.class.php";
-    include "..\classes\login-contr.class.php";
-    $signup = new LoginContr($uid, $password);
+    include "..\classes\signup.class.php";
+    include "..\classes\signup-contr.class.php";
+    $signup = new SignupContr($uid, $password, $passwordRepeat, $email);
 
     //Running error handlers and user signup
-    $signup->loginUser();
+    $signup->signupUser();
 
     //Going to back to front page
     header("location: ../index.php?error=none");
