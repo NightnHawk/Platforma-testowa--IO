@@ -105,6 +105,8 @@ button{
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
+    font-family: 'Libre Baskerville', serif;
+    
 }
 .index-login-login{
     float: left;
@@ -124,12 +126,17 @@ button{
 }
 
 .index-login-login form button{
-   padding-left: 25%;
-   transform: translate(-25%, 0);
+    padding-block: 5%;
+    padding-inline: 15%;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    background-color: #c0c0c0;
 }
 
 .index-login-login form button:hover{
     color: #AE1FA5;
+    background-color: white;
 }
 
 .index-login-textbox{
@@ -144,11 +151,21 @@ button{
     border-radius: 25px;
 }
 
+.index-login-account-type{
+    width: 100%;
+}
+
+.forgot-password{
+    text-align: center;
+}
+.forgot-password a:hover{
+    color: #AE1FA5;
+}
 
 .index-login-singup{
     width: 48%;
     height: fit-content;
-    background-color: rgb(228, 228, 228);
+    background-color: #e4e4e4;
     padding: 10px;
     border-radius: 25px;
 }
@@ -162,10 +179,15 @@ button{
 }
 
 .index-login-singup form button{
-    padding-left: 25%;
-   transform: translate(-25%, 0);
+    padding-block: 5%;
+    padding-inline: 15%;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    background-color: #c0c0c0;
 }
 
 .index-login-singup form button:hover{
     color: #AE1FA5;
+    background-color: white;
 }
