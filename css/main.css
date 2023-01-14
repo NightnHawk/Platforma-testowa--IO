@@ -191,3 +191,68 @@ button{
     color: #AE1FA5;
     background-color: white;
 }
+
+.profile-wrapper{
+
+    width: 33%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.profile-info{
+    background-color: aquamarine;
+}
+.profile-info img{
+    background-color: aquamarine;
+}
+
+.follow-btn{
+    text-align: left;
+    width: fit-content;
+    padding-block: 1%;
+    padding-inline: 3%;
+    border-radius: 25px;
+    display: block;
+    background-color: #c0c0c0;
+}
+.follow-btn:hover{
+    color: #AE1FA5;
+    background-color: white;
+}
+.profile-info-about{
+    background-color: #AE1FA5;
+    height: 200px;
+}
+
+
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .profile-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+  }
+  
+  .profile-card img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .profile-card h1 {
+    margin-bottom: 10px;
+  }
+  
+  .profile-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
