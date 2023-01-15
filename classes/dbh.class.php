@@ -6,7 +6,7 @@ class Dbh{
         try {
             $username = "root";
             $password = "";
-            $dbh = new PDO('mysql:host=localhost;dbname=logindb', $username, $password);
+            $dbh = new PDO('mysql:host=localhost;dbname=platforma-io', $username, $password);
             return $dbh;
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessae() . "<br/>";
