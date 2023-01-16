@@ -29,7 +29,7 @@
 		
 		//porównanie
 		if($correct_choice == $selected_choice){
-			$_SESSION['score']+1;
+			$_SESSION['score']++;
 		}
 
 		

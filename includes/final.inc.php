@@ -13,7 +13,7 @@
 		<h2>The End</h2>
 			<p>You Died</p>
 			<p>Final Score: <?php echo $_SESSION['score']; ?></p>
-			<a href="question.inc.php?n=1 class="start">Take Again</a>
+			<a href="test_start.inc.php" class="start">Take Again</a>
 	</main>
 </body>
 </html>
