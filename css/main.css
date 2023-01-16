@@ -10,6 +10,12 @@ button{
     cursor: pointer;
 }
 
+ footer{
+	  border-top:3px #f4f4f4 solid;
+	  text-align:center;
+	  padding-top:5px;
+  }
+
 .header-main{
     width: 100%;
     height: 60px;
@@ -256,3 +262,4 @@ button{
     font-size: 14px;
     line-height: 1.5;
   }
+  

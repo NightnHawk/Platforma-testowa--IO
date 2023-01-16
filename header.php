@@ -21,7 +21,7 @@
 				<ul>
 					<li><a href="index.php">Home Page</a></li>
 					<li><a href="#">Documentation</a></li>
-					<li><a href="includes/question.inc.php?n=1">About Us</a></li>
+					<li><a href="includes/test_start.inc.php">About Us</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>

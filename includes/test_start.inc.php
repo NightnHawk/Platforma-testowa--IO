@@ -1,39 +1,38 @@
-<?php include 'database.inc.php'?>
-<?php
-	//seting question number
-	$number = (int) $_GET['n'];
-	//geting question from database
-	$query = "SELECT * FROM questions WHERE question_nr = $number";
-
-	$result = $mysqli->query($query) or die($mysqli->error._LINE_);
-	
-	$question = $result->fetch_assoc();
-	
-	//geting choices
-	$query = "SELECT * FROM choices WHERE question_nr = $number";
-	$choices = $mysqli->query($query) or die($mysqli->error._LINE_);
-?>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
+	<meta charaset="utf-8"/>
+	<title>Student Test Page</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<header>
+	<div class="container">
+		<h1>Student Test Page<h1>
+	</div>
+	
+	<header>
+	
 	<main>
-		<div class="conteiner">
-			<div class="current">Question:</div>
-			<p class="question">
-				<?php echo $question['text']?>
-			</p>
-			<form method="post" action="process.inc.php">
-				<ul class="choices">
-				<?php while($row = $choices->fetch_assoc()):?>
-					<li><input name="choice" type="radio" value="<?php echo $row['id'];?>"/><?php echo $row['text'];?></li>
-				<?php endwhile; ?>
-				
-
-				</ul>
-				<input type="submit" value="submit"/>
+	<header>
+		<div class="container">
+			<h2>Test Your Student Knowledge</h2>
+			<p>This is a testing page</p>
+			<ul>
+				<li><strong>Number of Question: </strong>2</li>
+				<li><strong>Test Type:</strong>Nobady knows</li>
+				<li><strong>Time: </strong>5 Minutes</li>
+			</ul>
+			<a href="question.inc.php?n=1" class="start">Start Test</a>
 		</div>
+	
 	</main>
-</body>
+	
+	<footer>
+		<div class="container">
+			Copyright &copy; 2023, Student Debil
+		</div>
+</body
+
 </html>
