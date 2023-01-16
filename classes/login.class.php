@@ -3,9 +3,9 @@
 class Login extends Dbh{
 
     protected function getUser($uid, $password){
-        $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ? OR users_email = ?;');
+        $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_email = ? OR users_uid = ?;');
         
-        if(!$stmt->execute(array($uid, $password))){
+        if(!$stmt->execute(array($uid, $uid))){
             $stmt = null;
             header("location: ../index.php?error=stmlfailed");
             exit();
