@@ -32,7 +32,8 @@
 				
 
 				</ul>
-				<input type="submit" value="submit"/>
+				<input type="submit" value="Submit"/>
+			</form>
 		</div>
 	</main>
 </body>
