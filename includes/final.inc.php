@@ -11,7 +11,7 @@
 	<main>
 		<h2>The End</h2>
 			<p>You Died</p>
-			<p>Final Score: 0</p>
+			<p>Final Score: <?php echo 0?></p>
 			<a href="question.inc.php" class="start">Take Again</a>
 	</main>
 </body>
