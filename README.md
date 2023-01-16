@@ -1,7 +1,7 @@
 # Platforma testowa -IO
  Projekt na inżynierię oprogramowania
 
- query do SQL przy tworzeniu bazy danych, nazwać ją "logindb"
+ query do SQL przy tworzeniu bazy danych, nazwać ją "platforma-io"
 
 CREATE TABLE users(
     users_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
@@ -10,9 +10,8 @@ CREATE TABLE users(
     users_email TINYTEXT not null
 );
 
- query do SQL przy tworzeniu bazy danych dla pytan, nazwać ją "questions"
 
-CREATE TABLE users(
+CREATE TABLE questions(
     question_nr int(11) PRIMARY KEY not null,
     text TEXT not null,
 );
