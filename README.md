@@ -9,3 +9,10 @@ CREATE TABLE users(
     users_pwd LONGTEXT not null,
     users_email TINYTEXT not null
 );
+
+ query do SQL przy tworzeniu bazy danych dla pytan, nazwać ją "questions"
+
+CREATE TABLE users(
+    question_nr int(11) PRIMARY KEY not null,
+    text TEXT not null,
+);
