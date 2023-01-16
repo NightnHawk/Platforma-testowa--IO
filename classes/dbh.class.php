@@ -9,7 +9,7 @@ class Dbh{
             $dbh = new PDO('mysql:host=localhost;dbname=platforma-io', $username, $password);
             return $dbh;
         } catch (PDOException $e) {
-            print "Error!: " . $e->getMessae() . "<br/>";
+            print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
     }

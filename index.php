@@ -16,13 +16,6 @@
 				<div class="index-login-textbox">
 					<input type="password" name="password" placeholder="Hasło">
 				</div>
-				<div class="index-login-textbox">
-					<select name="index-login-account-type" class="index-login-account-type">
-						<option>Typ konta</option>
-						<option>Uczeń</option>
-						<option>Nauczyciel</option>
-					</select>
-				</div>
 				<button type="submit" name="submit">LOGIN</button>
 				<br>
 				<div class="forgot-password">
@@ -38,6 +31,12 @@
 			<form action="includes/signup.inc.php" method="post">
 				<div class="index-login-textbox">
 					<input type="text" name="uid" placeholder="Nazwa użytkownika">
+				</div>
+				<div class="index-login-textbox">
+					<input type="text" name="first" placeholder="Imię">
+				</div>
+				<div class="index-login-textbox">
+					<input type="text" name="last" placeholder="Nazwisko">
 				</div>	
 				<div class="index-login-textbox">
 					<input type="password" name="password" placeholder="Hasło">
@@ -47,6 +46,12 @@
 				</div>
 				<div class="index-login-textbox">
 					<input type="text" name="email" placeholder="Adres e-mail">
+				</div>
+				<div class="index-login-textbox">
+					<select name="index-login-account-type" class="index-login-account-type">
+						<option value="0">Uczeń</option>
+						<option value="1">Nauczyciel</option>
+					</select>
 				</div>
 				<button type="submit" name="submit">SIGN UP</button>
 			</form>

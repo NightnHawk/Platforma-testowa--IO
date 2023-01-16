@@ -2,11 +2,11 @@
 
 class Signup extends Dbh{
 
-    protected function setUser($uid, $password, $email){
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?, ?, ?);');
+    protected function setUser($uid, $first, $last, $password, $email, $type){
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_first, users_last, users_pwd, users_email, users_type) VALUES (?, ?, ?, ?, ?, ?);');
         
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        if(!$stmt->execute(array($uid, $hashedPassword, $email))){
+        if(!$stmt->execute(array($uid, $first, $last, $hashedPassword, $email, $type))){
             $stmt = null;
             header("location: ../index.php?error=stmlfailed");
             exit();
