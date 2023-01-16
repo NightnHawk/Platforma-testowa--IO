@@ -1,13 +1,18 @@
-<?include 'database.inc.php';
+<?php include 'database.inc.php';?>
+<?php session_start();?>
 
-session_start();?>
-<?
-//Sprawdzanie punktacji (set_error_handler)
-	if(!isset(@_SESSION['score'])){
+<?php
+/*Sprawdzanie punktacji (set_error_handler)*/
+	if(!isset($_SESSION['score'])){
 		$_SESSION['score'] = 0;
 	}
 	
 	if($_POST){
-		echo 'Działa';
+		$number = $_POST['number'];
+		$selected_choice = $_POST['choice'];
+		
+		echo $number.'<br>';
+		echo $selected_choice;
 	}
-	echo "huh?";
+
+?>

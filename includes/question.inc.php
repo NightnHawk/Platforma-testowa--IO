@@ -29,10 +29,10 @@
 				<?php while($row = $choices->fetch_assoc()):?>
 					<li><input name="choice" type="radio" value="<?php echo $row['id'];?>"/><?php echo $row['text'];?></li>
 				<?php endwhile; ?>
-				
 
 				</ul>
 				<input type="submit" value="Submit"/>
+				<input type="hidden" name="number" value="<?php echo $number; ?>"/>
 			</form>
 		</div>
 	</main>
