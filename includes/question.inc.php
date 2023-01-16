@@ -20,7 +20,7 @@
 <body>
 	<main>
 		<div class="conteiner">
-			<div class="current">Question:</div>
+			<div class="current">Question <?php echo $question['question_nr']?>:</div>
 			<p class="question">
 				<?php echo $question['text']?>
 			</p>
