@@ -1,4 +1,8 @@
 <?php
+include_once "imgh.php";
+session_start();
+$id = $_SESSION["userid"];
+
 if(isset($_POST['pfp-upload'])){
     $file = $_FILES['pfp'];
     print_r($file);
@@ -15,12 +19,16 @@ if(isset($_POST['pfp-upload'])){
 
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
-            if($fileSize<1000000){//Rozmiar pliku mniejszy niż 1gb
-                $fileNewName = uniqid('', true) . "." . $fileActualExt;
+            if($fileSize<1000000){//Rozmiar pliku mniejszy niż 1mb
+                $fileNewName = "profile". $id . "." . "jpg";//$fileActualExt;
                 $fileDestination = 'uploads/' . $fileNewName;
                 move_uploaded_file($fileTmpName, $fileDestination);
-                header("Location: index.php?uploadsuccess");
+                $sql = "UPDATE users SET users_img=0 WHERE users_id='$id';";
+                $result = mysqli_query($conn, $sql);
+                header("Location: profile.php?uploadsuccess");
             } else{
+                
+                header("Location: profile.php?toobigsize");
                 echo "Your file is too big!";
             }
 
