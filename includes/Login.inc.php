@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(isset($_POST["submit"]))
 {
@@ -16,5 +17,11 @@ if(isset($_POST["submit"]))
     $signup->loginUser();
 
     //Going to back to front page
-    header("location: ../index.php?error=none");
+    $type = $_SESSION["usertype"];
+    if($type === 0){
+        header("location: ../hubstudent.php");
+    } elseif($type === 1){
+        header("location: ../hubteacher.php");
+    }
+    
 }
