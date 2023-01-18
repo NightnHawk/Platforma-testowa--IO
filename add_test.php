@@ -36,11 +36,11 @@
 			<form method="post" action="add_test.php">
 				<div class="test-textbox">
 					<label>Add a test:</label>
-					<input type="text" name="test_name"/>
+					<input type="text" name="test_name" placeholder="Name"/>
 				</div>
 				<div class="test-textbox">
 					<label>Exam time:</label>
-					<input type="text" name="test_time"/>
+					<input type="text" name="test_time" placeholder="In minutes"/>
 				</div>
 				<div class="test-button">
 					<button type="submit" name="submit">Submit</button>
