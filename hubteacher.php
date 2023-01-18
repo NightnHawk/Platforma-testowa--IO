@@ -4,4 +4,14 @@
         header("location: hubstudent.php");
     }
 ?>
-<a href='includes/add.inc.php'>Add test</a>
+<nav class="teacher-nav">
+    <ul>
+        <li>
+            <a href='includes/add.inc.php'>
+                <div class="teacher-add">
+                    <p>Add test</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</nav>
