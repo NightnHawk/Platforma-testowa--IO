@@ -1,9 +1,13 @@
+<?php session_start();?>
 <?php
 include 'database.inc.php';
+if(isset($_POST['submit'])){
+	$_SESSION['test_name']=$_POST['test_name'];
+}
 /*
 Ile pytań w teście? Nie wiem, to pobiorę z bazy
 */
-$query ="SELECT * FROM questions";
+$query ="SELECT * FROM questions WHERE test_name='$_SESSION[test_name]'";
 $results = $mysqli->query($query) or die($mysqli->error._LINE_);
 $total = $results->num_rows;
 ?>
@@ -30,10 +34,13 @@ $total = $results->num_rows;
 			<p>This is a testing page</p>
 			<ul>
 				<li><strong>Number of Question: </strong><?php echo $total;?></li>
-				<li><strong>Test Type: </strong>Nobody knows</li>
+				<li><strong>Test Name: </strong><?php echo $_SESSION['test_name'];?></li>
 				<li><strong>Time: </strong><?php echo $total*.5;?> Minutes</li>
 			</ul>
-			<a href="question.inc.php?n=1" class="start-test">Start Test</a>
+			<form action='question.inc.php?n=1' method = 'post'>
+					<select name='test_name'><option value ='<?php echo $_SESSION['test_name'];?>'></option></select>;
+						<button type='submit' name='submit'> Start test </button>
+					</form>
 		</div>
 	
 	</main>

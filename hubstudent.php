@@ -4,3 +4,15 @@
         header("Location: hubteacher.php");
     }
 ?>
+<nav class="teacher-nav">
+    <ul>
+        <li>
+			<a href='choose_test.php'>
+                <div class="teacher-add">
+                    <p>Choose test</p>
+                </div>
+            </a>
+			<br>
+        </li>
+    </ul>
+</nav>

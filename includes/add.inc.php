@@ -6,6 +6,7 @@
 		//Dostać się do zmiennych w POST
 		$question_nr =$_POST['question_nr'];
 		$question_text =$_POST['question_text'];
+		$test_name =$_POST['test_name'];
 		//Choices array
 		$choices = array();
 		$choices[1] = $_POST['choice1'];
@@ -13,9 +14,10 @@
 		$choices[3] = $_POST['choice3'];
 		$choices[4] = $_POST['choice4'];
 		$correct = $_POST['correct'];
+
 		
 		//question query
-		$query = "INSERT INTO `questions`(question_nr, text) VALUES('$question_nr','$question_text')";
+		$query = "INSERT INTO `questions`(question_nr, text, test_name) VALUES('$question_nr','$question_text', '$test_name')";
 		//Run query
 		$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
 		//Potwierdzenie dodania pytania
@@ -28,7 +30,7 @@
 						$is_correct=0;
 					}
 					//Choice query
-					$query = "INSERT INTO `choices`(question_nr, is_correct, text) VALUES('$question_nr','$is_correct','$value')";
+					$query = "INSERT INTO `choices`(question_nr, is_correct, text, test_name) VALUES('$question_nr','$is_correct','$value', '$test_name')";
 					//Run query
 					$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
 					//Potwierdzenie dodania odpowiedzi
@@ -63,8 +65,12 @@ $next=$total+1;
 			?>
 			<form method="post" action="add.inc.php">
 				<p>
+					<label>Test name:</label>
+					<input type="text" name="test_name"/>
+				</p>
+				<p>
 					<label>Question Number:</label>
-					<input type="number" value="<?php echo $next;?>" name="question_nr"/>
+					<input type="number" name="question_nr"/>
 				</p>
 					<p>
 					<label>Question Text:</label>
