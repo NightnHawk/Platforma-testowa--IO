@@ -21,7 +21,7 @@ button{
 	 cursor: pointer;
 	 color:#666;
 	 background:#ABADB8;
-	 border:1px dotted #cccl;
+	 border:1px dotted #ccc1;
 	 padding: 6px 13px;
 	 
  }
@@ -109,6 +109,21 @@ button{
 
 .header-main-acount-nav ul li a:hover{
     color: #AE1FA5;
+}
+
+.header-img{
+    width: fit-content;
+    height: 100%;
+    /*background-color: yellow;*/
+    display: flex;
+    border-radius: 50%;
+}
+
+.header-img img{
+    width: 45px;
+    padding-top: 7.5px;
+    align-self: center;
+    border-radius: 50%;
 }
 
 .wrapper{

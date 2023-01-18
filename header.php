@@ -1,6 +1,7 @@
 <?php
     session_start();
 	include_once "includes\autoloader.inc.php";
+	include_once "imgh.php";
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -19,7 +20,17 @@
 			<img src="images\placeholder_logo.png" alt="logo">
 			<nav class="header-main-nav">
 				<ul>
-					<li><a href="index.php">Home Page</a></li>
+					<?php
+						if(isset($_SESSION["userid"])){
+							if($_SESSION["usertype"]===0){
+								echo '<li><a href="hubstudent.php">Home Page</a></li>';
+							} elseif($_SESSION["usertype"]===1){
+								echo '<li><a href="hubteacher.php">Home Page</a></li>';
+							}
+						} else{
+							echo '<li><a href="index.php">Home Page</a></li>';
+						}
+					?>
 					<li><a href="#">Documentation</a></li>
 					<li><a href="includes/test_start.inc.php">About Us</a></li>
 					<li><a href="#">Contact</a></li>
@@ -29,6 +40,32 @@
 		<div class="header-main-acount">
 			<nav class="header-main-acount-nav">
 				<ul>
+				<li>
+					<div type="round" class="header-img">
+						<?php
+						if(isset($_SESSION["userid"])){
+							$id = $_SESSION["userid"];
+							$sql = "SELECT * FROM users WHERE users_id=$id";
+							$result = mysqli_query($conn, $sql);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)){
+									$id = $row["users_id"];
+									$sqlImg = "SELECT * FROM users WHERE users_id=$id";
+									$resultImg = mysqli_query($conn, $sqlImg);
+									while($rowImg = mysqli_fetch_assoc($resultImg)){
+										if($rowImg["users_img"] == 0){
+											echo '<img src="uploads/profile' . $id . '.jpg" alt="Profile picture">';
+										} else{
+											echo '<img src="images/profile.jpg" alt="Profile picture">';
+										}
+									}
+								}
+							}
+						}
+
+						?>
+					</div>
+					</li>
 					<?php
 						if(isset($_SESSION["userid"])){
 					?>
