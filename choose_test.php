@@ -13,14 +13,14 @@ $results = $mysqli->query($query) or die($mysqli->error._LINE_);
 						?><form action='includes/test_start.inc.php' method = 'post'>
 					<select name='test_name'><option value ='<?php echo $row["test_name"];?>'></option></select>;
 						<button type='submit' name='submit'> Start test </button>	
+						</form>
 					<?php if( $_SESSION["usertype"]==1){
-					?></form>
+					?>
 						<form action='includes/display_data.inc.php' method = 'post'>
 						<select name='test_name'><option value ='<?php echo $row["test_name"];?>'></option></select>;
 						<button type='submit' name='submit'> Display test </button>	
 					</form><?php 
 					}
-					
 			
 		}
 ?>

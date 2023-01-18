@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 	while($row = $result->fetch_assoc()) {
 		echo "question_nr: " . $row["question_nr"]. " - text: " . $row["text"]."<br>";
 		$question_nr=$row["question_nr"];
-		$query = "SELECT * FROM choices WHERE question_nr=$question_nr";
+		$query = "SELECT * FROM choices WHERE question_nr=$question_nr AND test_name='$_SESSION[test_name]'";
 		$choices_result = $mysqli->query($query) or die($mysqli->error._LINE_);
 
 		if ($choices_result->num_rows > 0) {	
@@ -28,17 +28,7 @@ if(isset($_POST['submit'])){
 		echo "0 results";
 	}
 	
-	//$question_nr = $result->fetch_assoc();
-	
-	//geting choices
-	//$query = "SELECT * FROM choices WHERE question_nr = $question_nr";
-	//$choices = $mysqli->query($query) or die($mysqli->error._LINE_);
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
 	<main>
 
 	</main>

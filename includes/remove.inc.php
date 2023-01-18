@@ -5,15 +5,16 @@
 <?php if(isset($_POST['submit'])){
 		//Dostać się do zmiennych w POST
 		$question_nr =$_POST['question_nr'];
+		$test_name =$_POST['test_name'];
 		
 		//question query
-		$query = "DELETE FROM questions WHERE question_nr = $question_nr";
+		$query = "DELETE FROM questions WHERE question_nr = $question_nr AND test_name='$test_name'";
 		//Run query
 		$remove_row = $mysqli->query($query) or die($mysqli->error._LINE_);
 		//Potwierdzenie usunięcia pytania
 		if($remove_row){
 			//Choice query
-			$query = "DELETE FROM choices WHERE question_nr = $question_nr";
+			$query = "DELETE FROM choices WHERE question_nr = $question_nr AND test_name='$test_name'";
 			//Run query
 			$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
 		}
@@ -21,12 +22,6 @@
 		
 	}
 	
-//Ile pytań w teście? Nie wiem, to pobiorę z bazy
-
-$query ="SELECT * FROM questions";
-$results = $mysqli->query($query) or die($mysqli->error._LINE_);
-$total = $results->num_rows;
-$next=$total;
 ?>
 
 	<main>
@@ -39,8 +34,12 @@ $next=$total;
 			?>
 			<form method="post" action="remove.inc.php">
 				<p>
+					<label>Test name:</label>
+					<input type="text"  name="test_name"/>
+				</p>
+				<p>
 					<label>Question Number:</label>
-					<input type="number" value="<?php echo $next;?>" name="question_nr"/>
+					<input type="number" name="question_nr"/>
 				</p>
 					<p>
 					<input type="submit" name="submit" value="submit"/>
