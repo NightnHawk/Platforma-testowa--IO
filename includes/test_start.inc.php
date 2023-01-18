@@ -10,6 +10,10 @@ Ile pytań w teście? Nie wiem, to pobiorę z bazy
 $query ="SELECT * FROM questions WHERE test_name='$_SESSION[test_name]'";
 $results = $mysqli->query($query) or die($mysqli->error._LINE_);
 $total = $results->num_rows;
+//ściągnie czasu
+$query ="SELECT * FROM tests WHERE test_name='$_SESSION[test_name]'";
+$results = $mysqli->query($query) or die($mysqli->error._LINE_);
+$row = $results->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +39,7 @@ $total = $results->num_rows;
 			<ul>
 				<li><strong>Number of Question: </strong><?php echo $total;?></li>
 				<li><strong>Test Name: </strong><?php echo $_SESSION['test_name'];?></li>
-				<li><strong>Time: </strong><?php echo $total*.5;?> Minutes</li>
+				<li><strong>Time: </strong><?php echo $row['test_time'];?> Minutes</li>
 			</ul>
 			<form action='question.inc.php?n=1' method = 'post'>
 					<select name='test_name'><option value ='<?php echo $_SESSION['test_name'];?>'></option></select>;
