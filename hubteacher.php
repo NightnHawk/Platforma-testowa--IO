@@ -31,12 +31,6 @@
                 </div>
             </a>
 			<br>
-				<a href='includes/display_data.inc.php'>
-                <div class="teacher-add">
-                    <p>Display test</p>
-                </div>
-            </a>
-			<br>
 							<a href='choose_test.php'>
                 <div class="teacher-add">
                     <p>Choose test</p>

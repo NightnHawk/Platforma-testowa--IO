@@ -1,9 +1,12 @@
 <?php include 'database.inc.php';?>
 <?php session_start();?>
 <?php
+if(isset($_POST['submit'])){
+	$_SESSION['test_name']=$_POST['test_name'];
+}
 
 	//geting question from database
-	$query = "SELECT * FROM questions";
+	$query = "SELECT * FROM questions WHERE test_name='$_SESSION[test_name]'";
 
 	$result = $mysqli->query($query) or die($mysqli->error._LINE_);
 	if ($result->num_rows > 0) {

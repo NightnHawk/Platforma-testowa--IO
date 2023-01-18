@@ -32,7 +32,7 @@
 						}
 					?>
 					<li><a href="#">Documentation</a></li>
-					<li><a href="includes/test_start.inc.php">About Us</a></li>
+					<li><a href="#">About Us</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
