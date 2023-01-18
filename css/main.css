@@ -116,14 +116,18 @@ button{
     height: 100%;
     /*background-color: yellow;*/
     display: flex;
-    border-radius: 50%;
+    /*border-radius: 50%;
+    overflow: hidden;*/
+    padding-top: 7.5px;
 }
 
 .header-img img{
     width: 45px;
-    padding-top: 7.5px;
+    height: 45px;
+    /*padding-top: 7.5px;*/
     align-self: center;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
+    object-fit: cover;
 }
 
 .wrapper{
@@ -274,7 +278,7 @@ button{
   
   .profile-card img {
     width: 200px;
-    border-radius: 50%;
+    border-radius: 5%;
     margin-bottom: 20px;
   }
   
