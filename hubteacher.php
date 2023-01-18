@@ -4,3 +4,4 @@
         header("location: hubstudent.php");
     }
 ?>
+<a href='includes/add.inc.php'>Add test</a>
