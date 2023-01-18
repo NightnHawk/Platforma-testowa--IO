@@ -12,12 +12,10 @@
 		echo "question_nr: " . $row["question_nr"]. " - text: " . $row["text"]."<br>";
 		$query = "SELECT * FROM choices WHERE question_nr=$row[question_nr]";
 		$choices_result = $mysqli->query($query) or die($mysqli->error._LINE_);
-		/*if ($choices_result->num_rows > 0) {
-			while($choice_row = $result->fetch_assoc()){
-				echo "text: " . $choice_row["text"]. " - " . $choice_row["is_correct"]."<br>";
-				
-			}
-		}*/
+		if ($choices_result->num_rows > 0) {
+			//$choice_row = $result->fetch_assoc();
+			echo "text: " . $row["question_nr"]. "<br>";
+		}
 	}
 	} else {
 		echo "0 results";
