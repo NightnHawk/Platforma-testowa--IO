@@ -10,11 +10,15 @@
 	// output data of each row
 	while($row = $result->fetch_assoc()) {
 		echo "question_nr: " . $row["question_nr"]. " - text: " . $row["text"]."<br>";
-		$query = "SELECT * FROM choices WHERE question_nr=$row[question_nr]";
+		$question_nr=$row["question_nr"];
+		$query = "SELECT * FROM choices WHERE question_nr=$question_nr";
 		$choices_result = $mysqli->query($query) or die($mysqli->error._LINE_);
-		if ($choices_result->num_rows > 0) {
-			//$choice_row = $result->fetch_assoc();
-			echo "text: " . $row["question_nr"]. "<br>";
+
+		if ($choices_result->num_rows > 0) {	
+			while($choices_row = $choices_result->fetch_assoc()){
+			echo "- " . $choices_row["text"]. " - wartość punktowa: ". $choices_row["is_correct"]. "<br>";
+			}
+
 		}
 	}
 	} else {
