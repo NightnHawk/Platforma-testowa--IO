@@ -1,5 +1,6 @@
 <?php
-	include_once "../header.php";
+	//include_once "../header.php";
+		session_start();
 ?>
 <?php include 'database.inc.php';?>
 <?php if(isset($_POST['submit'])){
@@ -45,6 +46,17 @@
 					<input type="submit" name="submit" value="submit"/>
 				</p>
 		</div>
+					<?php
+						if(isset($_SESSION["userid"])){
+							if($_SESSION["usertype"]===0){
+								echo '<li><a href="../hubstudent.php">Home Page</a></li>';
+							} elseif($_SESSION["usertype"]===1){
+								echo '<li><a href="../hubteacher.php">Home Page</a></li>';
+							}
+						} else{
+							echo '<li><a href="../index.php">Home Page</a></li>';
+						}
+					?>
 	</main>
 </body>
 </html>

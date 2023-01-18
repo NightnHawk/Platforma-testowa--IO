@@ -1,5 +1,6 @@
 <?php
-	include_once "../header.php";
+	//include_once "../header.php";
+	session_start();
 ?>
 <?php include 'database.inc.php';?>
 <?php if(isset($_POST['submit'])){
@@ -15,7 +16,12 @@
 		$choices[4] = $_POST['choice4'];
 		$correct = $_POST['correct'];
 
+		//sprawdzenie czy pytanie już istnieje w teście
+		$query = "SELECT * FROM questions WHERE test_name='$test_name' AND question_nr='$question_nr'";
+		$result =$mysqli->query($query) or die($mysqli->error._LINE_);
+		$row = $result->num_rows;
 		
+		if($row==0){
 		//question query
 		$query = "INSERT INTO `questions`(question_nr, text, test_name) VALUES('$question_nr','$question_text', '$test_name')";
 		//Run query
@@ -45,7 +51,8 @@
 		}
 		$msg = 'Question has been added';
 		
-	}
+	}else{$msg = 'Question does exist';}
+}
 	
 //Ile pytań w teście? Nie wiem, to pobiorę z bazy
 
@@ -100,6 +107,17 @@ $next=$total+1;
 					<input type="submit" name="submit" value="submit"/>
 				</p>
 		</div>
+			<?php
+						if(isset($_SESSION["userid"])){
+							if($_SESSION["usertype"]===0){
+								echo '<li><a href="../hubstudent.php">Home Page</a></li>';
+							} elseif($_SESSION["usertype"]===1){
+								echo '<li><a href="../hubteacher.php">Home Page</a></li>';
+							}
+						} else{
+							echo '<li><a href="../index.php">Home Page</a></li>';
+						}
+					?>
 	</main>
 </body>
 </html>
