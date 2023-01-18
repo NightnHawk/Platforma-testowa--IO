@@ -36,7 +36,7 @@
 				</ul>
 				<input type="submit" value="Submit"/>
 				<input type="hidden" name="number" value="<?php echo $number; ?>"/>
-				<?php echo $_SESSION['score'];?>
+
 			</form>
 		</div>
 	</main>
