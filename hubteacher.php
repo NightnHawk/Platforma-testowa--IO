@@ -12,6 +12,11 @@
                     <p>Add test</p>
                 </div>
             </a>
+			<a href='includes/remove.inc.php'>
+                <div class="teacher-add">
+                    <p>Remove test</p>
+                </div>
+            </a>
         </li>
     </ul>
 </nav>
