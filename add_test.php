@@ -1,5 +1,5 @@
 <?php
-	include_once "header.php";
+	//include_once "../header.php";
 ?>
 <?php include 'includes/database.inc.php';?>
 <?php if(isset($_POST['submit'])){
@@ -8,7 +8,7 @@
 		$test_time=$_POST['test_time'];
 		
 		//question query
-		$query = "INSERT INTO `exams`(test_name, test_time) VALUES('$test_name','$test_time')";
+		$query = "INSERT INTO `tests`(test_name, test_time) VALUES('$test_name','$test_time')";
 		//Run query
 		$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
 		//Potwierdzenie dodania testu
@@ -28,12 +28,13 @@
 			<?php 
 			if(isset($msg)){
 				echo'<p>'.$msg.'</p>';
+				echo "<a href=includes/add.inc.php>Add questions to your test</a>"; 
 			}
 			?>
-			<form method="post" action="add.inc.php">
+			<form method="post" action="add_test.php">
 				<p>
 					<label>Add a test:</label>
-					<input type="number" name="test_name"/>
+					<input type="text" name="test_name"/>
 				</p>
 				<p>
 					<label>Exam time:</label>
