@@ -34,8 +34,10 @@ if(isset($_POST['pfp-upload'])){
 
         } else{
             echo "There was an error uploading your file!";
+			header("Location: profile.php?nofilerecived");
         }
     } else{
         echo "You cannot upload files of this type!";
+		header("Location: profile.php?invalidimgtype");
     }
 }
