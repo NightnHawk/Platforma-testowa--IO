@@ -17,3 +17,9 @@ $_SESSION["end_time"]=$end_time;?>
 <script type="text/javasript">
 window.location="timer_handler.inc.php";
 </script>
+
+<?php
+if(1){
+	header("Location: question.inc.php?n=1");
+}
+?>

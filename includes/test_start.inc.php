@@ -3,6 +3,8 @@
 include 'database.inc.php';
 if(isset($_POST['submit'])){
 	$_SESSION['test_name']=$_POST['test_name'];
+	
+
 }
 /*
 Ile pytań w teście? Nie wiem, to pobiorę z bazy
@@ -41,7 +43,7 @@ $row = $results->fetch_assoc();
 				<li><strong>Test Name: </strong><?php echo $_SESSION['test_name'];?></li>
 				<li><strong>Time: </strong><?php echo $row['test_time'];?> Minutes</li>
 			</ul>
-			<form action='question.inc.php?n=1' method = 'post'>
+			<form action='timer.inc.php'/*action='question.inc.php?n=1'*/ method = 'post'>
 					<select name='test_name'><option value ='<?php echo $_SESSION['test_name'];?>'></option></select>;
 						<button type='submit' name='submit'> Start test </button>
 					</form>
