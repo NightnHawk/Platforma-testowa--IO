@@ -50,5 +50,6 @@ setInterval(function(){
 	document.getElementById("response").innerHTML=xmlhttp.responseText;
 },1000);
 </script>
+
 </body>
 </html>

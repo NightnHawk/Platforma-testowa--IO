@@ -8,6 +8,13 @@ $timefirst=strtotime($from_time1);
 $timesecond=strtotime($to_time1);
 
 $diffrenceinsecondes=$timesecond-$timefirst;
-echo gmdate("H:i:s",$diffrenceinsecondes);
+echo gmdate("i:s",$diffrenceinsecondes);
+//echo $diffrenceinsecondes;
+
+if($diffrenceinsecondes==0){
+	$_SESSION["end_time"]=0;
+	header("Location: final.inc.php?");
+}
+
 
 ?>
