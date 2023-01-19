@@ -31,9 +31,15 @@
                 </div>
             </a>
 			<br>
-							<a href='choose_test.php'>
+			<a href='choose_test.php'>
                 <div class="teacher-add">
                     <p>Choose test</p>
+                </div>
+            </a>
+			<br>
+				<a href='includes/display_done_tests.inc.php'>
+                <div class="teacher-add">
+                    <p>See done tests</p>
                 </div>
             </a>
 			<br>

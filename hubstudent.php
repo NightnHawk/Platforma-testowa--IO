@@ -13,6 +13,12 @@
                 </div>
             </a>
 			<br>
+				<a href='includes/display_done_tests.inc.php'>
+                <div class="teacher-add">
+                    <p>See done tests</p>
+                </div>
+            </a>
+			<br>
         </li>
     </ul>
 </nav>
