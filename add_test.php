@@ -1,3 +1,4 @@
+
 <?php
 	include_once "header.php";
 ?>
@@ -7,16 +8,24 @@
 		$test_name =$_POST['test_name'];
 		$test_time=$_POST['test_time'];
 		
-		//question query
-		$query = "INSERT INTO `tests`(test_name, test_time) VALUES('$test_name','$test_time')";
-		//Run query
-		$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
-		//Potwierdzenie dodania testu
-		if($insert_row){
+		$query = "SELECT * FROM tests WHERE test_name='$test_name'";
+		$result =$mysqli->query($query) or die($mysqli->error._LINE_);
+		$row = $result->num_rows;
+
+		//test query
+		if($row==0){
+			$query = "INSERT INTO `tests`(test_name, test_time) VALUES('$test_name','$test_time')";
+			//Run query
+			$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
+			//Potwierdzenie dodania testu
+			if($insert_row){
 				$msg = 'Exam has been added';
+				}
+			}else{
+				$msg_error = "Test exist";
 			}
-			
 		}
+
 
 		
 	
@@ -27,6 +36,9 @@
 			<div class="test-header">
 			<h2>Add A Test</h1>
 			<?php 
+			if(isset($msg_error)){
+				echo'<p>'.$msg_error.'</p>';
+			}
 			if(isset($msg)){
 				echo'<p>'.$msg.'</p>';
 				echo "<a href=includes/add.inc.php>Add questions to your test</a>"; 

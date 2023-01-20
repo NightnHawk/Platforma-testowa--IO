@@ -1,17 +1,19 @@
 <?php include 'database.inc.php';?>
 <?php session_start();?>
 <?php
+
+
 	//seting question number
 	$number = (int) $_GET['n'];
 	//geting question from database
-	$query = "SELECT * FROM questions WHERE question_nr = $number";
+	$query = "SELECT * FROM questions WHERE question_nr = $number AND test_name = '$_SESSION[test_name]'";
 
 	$result = $mysqli->query($query) or die($mysqli->error._LINE_);
 	
 	$question = $result->fetch_assoc();
 	
 	//geting choices
-	$query = "SELECT * FROM choices WHERE question_nr = $number";
+	$query = "SELECT * FROM choices WHERE question_nr = $number AND test_name = '$_SESSION[test_name]'";
 	$choices = $mysqli->query($query) or die($mysqli->error._LINE_);
 ?>
 <!DOCTYPE html>
@@ -28,14 +30,26 @@
 			<form method="post" action="process.inc.php">
 				<ul class="choices">
 				<?php while($row = $choices->fetch_assoc()):?>
-					<li><input name="choice" type="radio" value="<?php echo $row['id'];?>"/><?php echo $row['text'];?></li>
+					<li><input name="choice" type="radio" value="<?php echo $row['text'];?>"/><?php echo $row['text'];?></li>
 				<?php endwhile; ?>
 
 				</ul>
 				<input type="submit" value="Submit"/>
 				<input type="hidden" name="number" value="<?php echo $number; ?>"/>
+
 			</form>
 		</div>
 	</main>
+	<div id="response"></div>
+
+<script type="text/javascript">
+setInterval(function(){
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET","response.inc.php", false);
+	xmlhttp.send(null);
+	document.getElementById("response").innerHTML=xmlhttp.responseText;
+},1000);
+</script>
+
 </body>
 </html>

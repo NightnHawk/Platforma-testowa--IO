@@ -334,12 +334,12 @@ button{
 
 .test_conteiner{
     position: absolute;
-	background-color: #5c5c5c;
-	width: fit-content;
-	height: fit-content;
+    background-color: #5c5c5c;
+    width: fit-content;
+    height: fit-content;
     top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 25px;
 }
@@ -363,4 +363,43 @@ button{
     outline: none;
     background-color: white;
     border-radius: 25px;
+}.test-header{
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.test_conteiner{
+    position: absolute;
+    background-color: #5c5c5c;
+    width: fit-content;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.test_conteiner button{
+    padding-block: 5%;
+    padding-inline: 15%;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    background-color: #c0c0c0;
+    font-family: 'Libre Baskerville', serif;
+}
+.test-textbox{
+    width:100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 25px;
+}
 }

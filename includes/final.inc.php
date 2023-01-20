@@ -1,6 +1,17 @@
 <?php
 include 'database.inc.php';
 session_start();?>
+<?php 
+		//score query
+		$query = "INSERT INTO `tests_results`(test_name, users_id, users_uid, score) VALUES('$_SESSION[test_name]','$_SESSION[userid]', '$_SESSION[useruid]','$_SESSION[score]')";
+		//Run query
+		$insert_row = $mysqli->query($query) or die($mysqli->error._LINE_);
+		//Potwierdzenie dodania wyników
+		if($insert_row){
+				$msg = 'Zapisano podejście';
+			}
+			
+?>
 
 <!DOCTYPE html>
 <html>

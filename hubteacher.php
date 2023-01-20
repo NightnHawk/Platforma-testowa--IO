@@ -7,23 +7,42 @@
 <nav class="teacher-nav">
     <ul>
         <li>
-            <a href='includes/add.inc.php'>
+		    <a href='add_test.php'>
                 <div class="teacher-add">
                     <p>Add test</p>
                 </div>
             </a>
 			<br>
-			<a href='includes/remove.inc.php'>
+            <a href='includes/add.inc.php'>
+                <div class="teacher-add">
+                    <p>Add question</p>
+                </div>
+            </a>
+			<br>
+				<a href='includes/remove_test.inc.php'>
                 <div class="teacher-add">
                     <p>Remove test</p>
                 </div>
             </a>
 			<br>
-				<a href='includes/display_data.inc.php'>
+			<a href='includes/remove.inc.php'>
                 <div class="teacher-add">
-                    <p>Display test</p>
+                    <p>Remove question</p>
                 </div>
             </a>
+			<br>
+			<a href='choose_test.php'>
+                <div class="teacher-add">
+                    <p>Choose test</p>
+                </div>
+            </a>
+			<br>
+				<a href='includes/display_done_tests.inc.php'>
+                <div class="teacher-add">
+                    <p>See done tests</p>
+                </div>
+            </a>
+			<br>
         </li>
     </ul>
 </nav>
